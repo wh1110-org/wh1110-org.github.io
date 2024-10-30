@@ -2,7 +2,6 @@ let quiz_data = {};
 let current_no = 0;
 let correct_count = 0;
 
-console.log("hi");
 gen_top_content();
 get_quiz_data();
 reg_start_event();
@@ -22,7 +21,7 @@ function gen_quiz_content() {
 	var ins = '<h1 class="p-quiz-title">' + quiz_data["quiz"][current_no]["q"] + '</h1>';
 	ins += '<ol class="p-quiz-choices">';
 	for (var i = 0; i < quiz_data["quiz"][current_no]["a"].length; i++) {
-		ins += '<li class="p-quiz-choices_item>';
+		ins += '<li class="p-quiz-choices_item">';
 		ins += '	<button class="c-btn js-quiz-choice" data-quiz_choice="' + (i + 1) + '">' + quiz_data["quiz"][current_no]["a"][i] + '</button>';
 		ins += '</li>';
 	}
@@ -43,10 +42,39 @@ function get_quiz_data() {
 	xhr.send();
 }
 
+function gen_answer_content(choice) {
+	var ins = '<h1 class="p-quiz-title">' + quiz_data["quiz"][current_no]["q"] + '</h1>';
+	if (quiz_data["quiz"][current_no]["correct"] === choice) {
+		ins += '<p class="p-quiz-result">正解</p>';
+		correct_count++;
+	} else {
+		ins += '<p class="p-quiz-result">不正解</p>';
+	}
+	ins += '<p class="p-quiz-commentary">' + quiz_data["quiz"][current_no]["commentary"] + '</p>';
+
+	if (current_no + 1 < quiz_data["quiz"].length) {
+		ins += '<div class="p-quiz-next">';
+		ins += '	<button class="c-btn js-quiz-next">次の問題</button';
+		ins += '</div>';
+	} else {
+		ins += '<div class="p-quiz-next">';
+		ins += '	<button class="c-btn js-quiz-next">完了!もう一度やる</button>';
+		ins += '</div>';
+	}
+
+	document.querySelector(".js-quiz-content").innerHTML = ins;
+}
+
 
 // Event Registrations
 function reg_start_event() {
 	document.querySelector(".js-quiz-start").addEventListener("click", function () {
 		gen_quiz_content();
 	}, false);
+}
+
+function reg_choice_event() {
+	for (var i = 0; i < document.querySelectorAll(".js-quiz-choice").length; i++) {
+
+	}
 }
