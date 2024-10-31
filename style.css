@@ -67,6 +67,7 @@
     display: block;
     position: relative;
     text-align: center;
+    font-size: large;
     text-decoration: none;
     border: 0.1vw solid black;
 }
