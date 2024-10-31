@@ -1,0 +1,81 @@
+.p-quiz {
+    width: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-left: 0.1vw solid black;
+    border-right: 0.1vw solid black;
+    padding: 0.5%;
+}
+
+@media screen and (max-width: 1000px) {
+    .p-quiz {
+        width: auto;
+        margin-left: 0%;
+        margin-right: 0%;
+        border-left: 0.1vw solid black;
+        border-right: 0.1vw solid black;
+        padding: 0.5%;
+    }
+}
+
+.p-quiz-title {
+    color: #1B1B1B;
+}
+
+.p-quiz-source {
+    text-align: right;
+}
+
+.c-btn {
+    display: block;
+    position: relative;
+    text-align: left;
+    font-size: large;
+    color: #1B1B1B;
+    background: white;
+    border: 1px solid white;
+}
+
+.c-btn:hover {
+    background: #F2F2F2;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.c-btn-correct {
+    display: block;
+    position: relative;
+    text-align: left;
+    font-size: large;
+    color: #1B1B1B;
+    background: #baeefc;
+    border: 1x solid white;
+}
+
+.c-btn-incorrect {
+    display: block;
+    position: relative;
+    text-align: left;
+    font-size: large;
+    color: #1B1B1B;
+    background: #fcbaba;
+    border: 1x solid white;
+}
+
+
+.c-btn-next {
+    display: block;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border: 0.1vw solid black;
+}
+
+.ul-wave {
+    text-decoration: underline wavy;
+    display: inline-block;
+}
+
+img {
+    width: 33%;
+}
