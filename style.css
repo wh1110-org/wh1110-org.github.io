@@ -82,7 +82,8 @@
 }
 
 .ul-wave {
-    text-decoration: underline wavy;
+    text-decoration: underline;
+    text-decoration-style: wavy;
     display: inline-block;
 }
 
