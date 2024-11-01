@@ -20,9 +20,10 @@ function gen_top_content() {
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ALL">はじめから</button>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="RANDOM">ランダム・エンドレス</button>';
 	ins += '	<h4>範囲別</h4>';
-	ins += '	<p>- 諸地域世界の形成</p>'
-	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="古代オリエント">古代オリエント</button>';
-	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="地中海世界とオリエント">地中海世界とオリエント</button>';
+	ins += '	<p>- オリエントと地中海世界</p>'
+	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="古代オリエント世界">古代オリエント世界</button>';
+	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ギリシア世界">ギリシア世界</button>';
+	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ローマ世界">ローマ世界</button>';
 	ins += '</div>';
 
 	document.querySelector('.js-quiz-content').innerHTML = ins;
@@ -114,7 +115,7 @@ function reg_start_event() {
 		document.querySelectorAll(".js-quiz-start")[i].addEventListener("click", function (e) {
 			quiz_mode = this.getAttribute("data-quiz_mode")
 			if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-				quiz_category = ["古代オリエント", "地中海世界とオリエント"]
+				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界"]
 				if (quiz_mode == "ALL") {
 					current_category_no = 0;
 					current_no = 0;
