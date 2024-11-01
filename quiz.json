@@ -133,8 +133,8 @@
 			"commentary": "1: アケメネス朝とギリシアの戦いはペルシア戦争であるが、マラトンの戦いではギリシアが勝利している。<br>2: ダレイオス1世(アケメネス朝全盛期)が造営を開始したペルセポリスだが、現在のイランに位置しており、イランはメソポタミア(チグリス・ユーフラテス川間、現在のイラクあたり)から外れている。<br>3: 正しい。<br>4: ペルシア人の宗教はマニ教ではなくゾロアスター教であったが、これはアケメネス朝ではなくササン朝で国教となる。"
 		},
 		{
-			"q": "下の図は大英博物館に収蔵されている「ウルのスタンダード(軍旗)」と呼ばれる遺物である。ウルについて述べた文として正しいものを、下の1~4のうちから一つ選べ。<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Standard_of_Ur_-_peace_side.jpg/1920px-Standard_of_Ur_-_peace_side.jpg'>",
-			"source": "02・追試",
+			"q": "下の図は大英博物館に収蔵されている「ウルのスタンダード(軍旗)」と呼ばれる遺物である。ウルについて述べた文として正しいものを、下の1~4のうちから一つ選べ。<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Standard_of_Ur_-_peace_side.jpg/1920px-Standard_of_Ur_-_peace_side.jpg' />",
+			"source": "02・追試<br>画像: Denis Bourez from France - British Museum, LondonUploaded by SunOfErat, CC 表示 2.0, https://commons.wikimedia.org/w/index.php?curid=30317206による",
 			"a": [
 				"シュメール人のサルゴン1世が建国した。",
 				"アッカド人の建てた都市国家だった。",
@@ -483,7 +483,7 @@
 				"ギリシア神話に題材をとった群像「ラオコーン」は、アテネの彫刻家フェイディアス(フィディアス)の傑作である。"
 			],
 			"correct": 1,
-			"commentary": "1: 正しい。<br>2: 劇場ではなく剣奴の闘技場だ。<br>3: デルフォイの神託はアポロン神による神託である。ソクラテスはデルフォイで「ソクラテスより知恵のあるものはいない」という神託を受け対話法を始めた。<br>4: ラオコーンは作者不明である。<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Laocoon_and_His_Sons.jpg/1920px-Laocoon_and_His_Sons.jpg' /> [ラオコーン]また、フェイディアスはアテネ女神像の制作やパルテノン神殿の再建に従事した。"
+			"commentary": "1: 正しい。<br>2: 劇場ではなく剣奴の闘技場だ。<br>3: デルフォイの神託はアポロン神による神託である。ソクラテスはデルフォイで「ソクラテスより知恵のあるものはいない」という神託を受け対話法を始めた。<br>4: ラオコーンは作者不明である。<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Laocoon_and_His_Sons.jpg/1920px-Laocoon_and_His_Sons.jpg' /><br>[ラオコーン、画像: Hagesandros, Athenedoros, and Polydoros - LivioAndronico (2014), CC 表示-継承 4.0, https://commons.wikimedia.org/w/index.php?curid=36412978による]<br>また、フェイディアスはアテネ女神像の制作やパルテノン神殿の再建に従事した。"
 		},
 		{
 			"q": "地中海・オリエント世界における君主について述べた文として正しいものを、次の1~4のうちから一つ選べ。",
@@ -665,7 +665,7 @@
 				"アクティウムの戦いは、地中海に進出していくきっかけとなった。"
 			],
 			"correct": 1,
-			"commentary": "1: 前2Cのことである。<br>2: ハンニバルがイタリアに侵入したのはポエニ戦争であるが、私兵の登場はそういった征服戦争の後属州からの安価な穀物の流入や戦争の長期化によって中小農民の没落がすすみ、貧富の差が拡大し共和制が動揺した時代である。よって誤り<br>3: タキトゥスではなくカエサルが正しい。タキトゥスが著したのは「ゲルマニア」である。<br>4: アクティウムの海戦はオクタヴィアヌスのローマ海軍がアントニウスとプトレマイオス朝エジプト、クレオパトラの連合軍に勝利した戦いである。これによってローマは東地中海制海権を獲得し、地中海進出が終結した。また、進出のきっかけはシチリア領有(前3C)である。<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Battle_of_Actium-en.svg/1920px-Battle_of_Actium-en.svg.png' />"
+			"commentary": "1: 前2Cのことである。<br>2: ハンニバルがイタリアに侵入したのはポエニ戦争であるが、私兵の登場はそういった征服戦争の後属州からの安価な穀物の流入や戦争の長期化によって中小農民の没落がすすみ、貧富の差が拡大し共和制が動揺した時代である。よって誤り<br>3: タキトゥスではなくカエサルが正しい。タキトゥスが著したのは「ゲルマニア」である。<br>4: アクティウムの海戦はオクタヴィアヌスのローマ海軍がアントニウスとプトレマイオス朝エジプト、クレオパトラの連合軍に勝利した戦いである。これによってローマは東地中海制海権を獲得し、地中海進出が終結した。また、進出のきっかけはシチリア領有(前3C)である。<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Battle_of_Actium-en.svg/1920px-Battle_of_Actium-en.svg.png' /><br>[アクティウムの海戦、画像:Future Perfect at Sunrise, on the basis of work by User:Lencer and User:Leo2004 - translated from File:Schlacht bei Actium.svg, CC 表示-継承 3.0, https://commons.wikimedia.org/w/index.php?curid=5505254による]"
 		},
 		{
 			"q": "古代ローマの政治や政治制度について述べた文として正しいものを、次の1~4のうちから一つ選べ。",
