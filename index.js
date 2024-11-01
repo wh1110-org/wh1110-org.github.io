@@ -4,6 +4,7 @@ let quiz_mode = "";
 let current_no = 0;
 let current_category_no = 0
 let quiz_count = 0;
+let quiz_cumul_sum = [0];
 let correct_count = 0;
 
 gen_top_content();
@@ -13,7 +14,7 @@ reg_start_event();
 // Page Generations
 function gen_top_content() {
 	var ins = '<h1 class="p-quiz-title">世界史1110</h1>';
-	ins += '<h3 class="p-quiz-subtitle">──センター過去問1110題とその解説</h3>';
+	ins += '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
 	ins += '<div class="p-quiz-next">';
 	ins += '	<h4>全範囲</h4>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ALL">はじめから</button>';
@@ -28,7 +29,7 @@ function gen_top_content() {
 }
 
 function gen_quiz_content(category) {
-	var ins = '<h1 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h1>';
+	var ins = '<h2 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h2>';
 	ins += '<p class="p-quiz-source">' + quiz_data[category][current_no]["source"] + '</p>';
 	ins += '<ol class="p-quiz-choices">';
 	for (var i = 0; i < quiz_data[category][current_no]["a"].length; i++) {
@@ -37,14 +38,18 @@ function gen_quiz_content(category) {
 		ins += '</li>';
 	}
 	ins += '</ol>';
-	ins += '<h3 class="p-quiz-subtitle">' + correct_count + '\/' + quiz_count + '問正解 (' + Math.round(correct_count * 1000 / quiz_count) / 10 + '%)</h3>';
+	if (quiz_mode == "RANDOM") {
+		ins += '<h3 class="p-quiz-subtitle">' + correct_count + '\/' + quiz_count + '問正解 (' + Math.round(correct_count * 1000 / quiz_count) / 10 + '%)</h3>';
+	} else {
+		ins += '<h3 class="p-quiz-subtitle">' + correct_count + '\/' + quiz_count + '問正解 (' + Math.round(correct_count * 1000 / quiz_count) / 10 + '%)' + '・全' + quiz_cumul_sum[quiz_cumul_sum.length - 1] + '問</h3>';
+	}
 
 	document.querySelector(".js-quiz-content").innerHTML = ins;
 }
 
 function gen_answer_content(category, choice) {
 	quiz_count++;
-	var ins = '<h1 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h1>';
+	var ins = '<h2 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h2>';
 	ins += '<p class="p-quiz-source">' + quiz_data[category][current_no]["source"] + '</p>';
 	ins += '<ol class="p-quiz-choices">';
 	for (var i = 0; i < quiz_data[category][current_no]["a"].length; i++) {
@@ -81,7 +86,11 @@ function gen_answer_content(category, choice) {
 		ins += '	<button class="c-btn-next js-quiz-top">完了!トップへ戻る</button>';
 		ins += '</div>';
 	}
-	ins += '<h3 class="p-quiz-subtitle">' + correct_count + '\/' + quiz_count + '問正解 (' + Math.round(correct_count * 1000 / quiz_count) / 10 + '%)</h3>';
+	if (quiz_mode == "RANDOM") {
+		ins += '<h3 class="p-quiz-subtitle">' + correct_count + '\/' + quiz_count + '問正解 (' + Math.round(correct_count * 1000 / quiz_count) / 10 + '%)</h3>';
+	} else {
+		ins += '<h3 class="p-quiz-subtitle">' + correct_count + '\/' + quiz_count + '問正解 (' + Math.round(correct_count * 1000 / quiz_count) / 10 + '%)' + '・全' + quiz_cumul_sum[quiz_cumul_sum.length - 1] + '問</h3>';
+	}
 
 	document.querySelector(".js-quiz-content").innerHTML = ins;
 }
@@ -118,6 +127,11 @@ function reg_start_event() {
 				current_category_no = 0;
 				current_no = 0;
 			}
+
+			// 累積和
+			for (var i = 0; i < quiz_category.length; i++) {
+				quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
+			}
 			gen_quiz_content(quiz_category[current_category_no]);
 			reg_choice_event(quiz_category[current_category_no]);
 		}, false);
@@ -140,8 +154,15 @@ function reg_choice_event(category) {
 function reg_nextquiz_event(category) {
 	document.querySelector(".js-quiz-next").addEventListener("click", function () {
 		if (quiz_mode == "RANDOM") {
-			current_category_no = Math.floor(Math.random() * quiz_category.length)
-			current_no = Math.floor(Math.random() * quiz_data[quiz_category[current_category_no]].length)
+			var no = Math.floor(Math.random() * quiz_cumul_sum[quiz_cumul_sum.length - 1]);
+			// 気になるなら二分探索を。
+			for (var i = quiz_category.length - 1; i >= 0; i--) {
+				if (no >= quiz_cumul_sum[i]) {
+					current_category_no = i;
+					current_no = no - quiz_cumul_sum[i];
+					break;
+				}
+			}
 		} else {
 			if (current_no + 1 >= quiz_data[category].length) {
 				current_category_no++;
