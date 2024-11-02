@@ -88,5 +88,9 @@
 }
 
 img {
-    width: 33%;
+    width: 50%;
+}
+
+.img-w100 {
+    width: 100%;
 }
