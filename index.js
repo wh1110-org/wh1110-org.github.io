@@ -40,8 +40,7 @@ async function main() {
 function gen_top_content() {
 	history.pushState(null, null, "/");
 
-	var ins = '<h1 class="p-quiz-title">世界史1110</h1>';
-	ins += '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
+	var ins = '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
 	ins += '<p>工事中。1110題ですが、設問数はもう少しあります。感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
 	ins += '<div class="p-quiz-next">';
 	ins += '	<h4>全範囲</h4>';
@@ -67,7 +66,7 @@ function gen_top_content() {
 }
 
 function gen_quiz_content(category) {
-	var ins = '<h2 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h2>';
+	var ins = '<h3 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h3>';
 	ins += '<p class="p-quiz-source">' + quiz_data[category][current_no]["source"] + '</p>';
 	ins += '<ol class="p-quiz-choices">';
 	for (var i = 0; i < quiz_data[category][current_no]["a"].length; i++) {
@@ -87,7 +86,7 @@ function gen_quiz_content(category) {
 
 function gen_answer_content(category, choice) {
 	quiz_count++;
-	var ins = '<h2 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h2>';
+	var ins = '<h3 class="p-quiz-title">' + quiz_data[category][current_no]["q"] + '</h3>';
 	ins += '<p class="p-quiz-source">' + quiz_data[category][current_no]["source"] + '</p>';
 	ins += '<ol class="p-quiz-choices">';
 	for (var i = 0; i < quiz_data[category][current_no]["a"].length; i++) {
