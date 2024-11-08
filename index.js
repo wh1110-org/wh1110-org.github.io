@@ -38,8 +38,6 @@ async function main() {
 
 // Page Generations
 function gen_top_content() {
-	history.pushState(null, null, "/");
-
 	var ins = '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
 	ins += '<p>工事中。1110題ですが、設問数はもう少しあります。感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
 	ins += '<div class="p-quiz-next">';
@@ -245,7 +243,7 @@ function reg_popstate_event() {
 			if (quiz_mode != "RANDOM") {
 				if (search_params.get("c") < current_category_no || search_params.get("n") < current_no) {
 					quiz_count--;
-				} else {
+				} else if (search_params.get("c") > current_category_no || search_params.get("n") > current_no) {
 					quiz_count++;
 				}
 			}
