@@ -7,12 +7,39 @@ let quiz_count = 0;
 let quiz_cumul_sum = [0];
 let correct_count = 0;
 
-gen_top_content();
-get_quiz_data();
-reg_start_event();
+main();
+
+async function main() {
+	var current_url = window.location.href;
+	var search_params = new URLSearchParams(new URL(current_url).search);
+
+	if (search_params.get("m") == null) {
+		get_quiz_data();
+		gen_top_content();
+		reg_start_event();
+	} else {
+		current_category_no = Number(search_params.get("c"));
+		current_no = Number(search_params.get("n"));
+
+		if (search_params.get("m") == "ALL" || search_params.get("m") == "RANDOM") {
+			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国"];
+		} else {
+			quiz_category = [search_params.get("m")];
+		}
+
+		get_quiz_data();
+		await new Promise(resolve => setTimeout(resolve, 1000));
+
+		gen_quiz_content(quiz_category[current_category_no]);
+		reg_choice_event(quiz_category[current_category_no]);
+	}
+	reg_popstate_event();
+}
 
 // Page Generations
 function gen_top_content() {
+	history.pushState(null, null, "/");
+
 	var ins = '<h1 class="p-quiz-title">世界史1110</h1>';
 	ins += '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
 	ins += '<p>工事中。1110題ですが、設問数はもう少しあります。感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
@@ -108,7 +135,7 @@ function gen_answer_content(category, choice) {
 
 
 // Get Quiz Data
-function get_quiz_data() {
+async function get_quiz_data() {
 	let xhr = new XMLHttpRequest();
 	xhr.onload = function () {
 		quiz_data = xhr.response;
@@ -144,6 +171,9 @@ function reg_start_event() {
 			for (var i = 0; i < quiz_category.length; i++) {
 				quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
 			}
+
+			query = "?m=" + quiz_mode + "&c=" + current_category_no + "&n=" + current_no;
+			history.pushState(null, null, query);
 			gen_quiz_content(quiz_category[current_category_no]);
 			reg_choice_event(quiz_category[current_category_no]);
 		}, false);
@@ -183,6 +213,10 @@ function reg_nextquiz_event(category) {
 				current_no++;
 			}
 		}
+
+		query = "?m=" + quiz_mode + "&c=" + current_category_no + "&n=" + current_no;
+		history.pushState(null, null, query);
+
 		gen_quiz_content(quiz_category[current_category_no]);
 		reg_choice_event(quiz_category[current_category_no]);
 	}, false);
@@ -191,8 +225,29 @@ function reg_nextquiz_event(category) {
 function reg_top_event() {
 	document.querySelector(".js-quiz-top").addEventListener("click", function () {
 		quiz_count = 0;
-		correct_count = 0
+		correct_count = 0;
 		gen_top_content();
 		reg_start_event();
+	}, false);
+}
+
+function reg_popstate_event() {
+	window.addEventListener("popstate", (e) => {
+		var current_url = window.location.href;
+		var search_params = new URLSearchParams(new URL(current_url).search);
+
+		if (search_params.get("m") == null) {
+			quiz_count = 0;
+			correct_count = 0;
+			gen_top_content();
+			reg_start_event();
+		} else {
+			current_category_no = Number(search_params.get("c"));
+			current_no = Number(search_params.get("n"))
+			quiz_count--;
+
+			gen_quiz_content(quiz_category[current_category_no]);
+			reg_choice_event(quiz_category[current_category_no]);
+		}
 	}, false);
 }
