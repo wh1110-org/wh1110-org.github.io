@@ -28,7 +28,7 @@ async function main() {
 		}
 
 		get_quiz_data();
-		await new Promise(resolve => setTimeout(resolve, 1000));
+		await new Promise(resolve => setTimeout(resolve, 500));
 
 		gen_quiz_content(quiz_category[current_category_no]);
 		reg_choice_event(quiz_category[current_category_no]);
@@ -242,9 +242,16 @@ function reg_popstate_event() {
 			gen_top_content();
 			reg_start_event();
 		} else {
+			// if: browser back, else: forward
+			if (quiz_mode != "RANDOM") {
+				if (search_params.get("c") < current_category_no || search_params.get("n") < current_no) {
+					quiz_count--;
+				} else {
+					quiz_count++;
+				}
+			}
 			current_category_no = Number(search_params.get("c"));
 			current_no = Number(search_params.get("n"))
-			quiz_count--;
 
 			gen_quiz_content(quiz_category[current_category_no]);
 			reg_choice_event(quiz_category[current_category_no]);
