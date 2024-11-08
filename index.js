@@ -30,6 +30,13 @@ async function main() {
 		get_quiz_data();
 		await new Promise(resolve => setTimeout(resolve, 500));
 
+		// 累積和
+		quiz_cumul_sum = [0];
+		for (var i = 0; i < quiz_category.length; i++) {
+			quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
+		}
+		quiz_count = quiz_cumul_sum[current_category_no] + current_no - 1;
+
 		gen_quiz_content(quiz_category[current_category_no]);
 		reg_choice_event(quiz_category[current_category_no]);
 	}
