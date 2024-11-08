@@ -20,11 +20,12 @@ async function main() {
 	} else {
 		current_category_no = Number(search_params.get("c"));
 		current_no = Number(search_params.get("n"));
+		quiz_mode = search_params.get("m");
 
-		if (search_params.get("m") == "ALL" || search_params.get("m") == "RANDOM") {
+		if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
 			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国"];
 		} else {
-			quiz_category = [search_params.get("m")];
+			quiz_category = [quiz_mode];
 		}
 
 		get_quiz_data();
@@ -35,7 +36,9 @@ async function main() {
 		for (var i = 0; i < quiz_category.length; i++) {
 			quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
 		}
-		quiz_count = quiz_cumul_sum[current_category_no] + current_no - 1;
+		if (quiz_mode != "RANDOM") {
+			quiz_count = quiz_cumul_sum[current_category_no] + current_no - 1;
+		}
 
 		gen_quiz_content(quiz_category[current_category_no]);
 		reg_choice_event(quiz_category[current_category_no]);
