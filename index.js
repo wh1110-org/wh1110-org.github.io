@@ -23,7 +23,7 @@ async function main() {
 		quiz_mode = search_params.get("m");
 
 		if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国"];
+			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界"];
 		} else {
 			quiz_category = [quiz_mode];
 		}
@@ -68,6 +68,7 @@ function gen_top_content() {
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="魏晋南北朝から元">・魏晋南北朝から元</button>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="中国総合問題">・中国総合問題</button>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="東アジア諸国">・東アジア諸国</button>';
+	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="内陸アジア世界">・内陸アジア世界</button>';
 	ins += '</div>';
 
 	document.querySelector('.js-quiz-content').innerHTML = ins;
@@ -159,7 +160,7 @@ function reg_start_event() {
 		document.querySelectorAll(".js-quiz-start")[i].addEventListener("click", function (e) {
 			quiz_mode = this.getAttribute("data-quiz_mode")
 			if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国"];
+				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界"];
 				if (quiz_mode == "ALL") {
 					current_category_no = 0;
 					current_no = 0;
