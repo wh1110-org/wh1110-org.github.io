@@ -37,7 +37,7 @@ async function main() {
 			quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
 		}
 		if (quiz_mode != "RANDOM") {
-			quiz_count = quiz_cumul_sum[current_category_no] + current_no - 1;
+			quiz_count = quiz_cumul_sum[current_category_no] + current_no;
 		}
 
 		gen_quiz_content(quiz_category[current_category_no]);
@@ -254,7 +254,7 @@ function reg_popstate_event() {
 			current_no = Number(search_params.get("n"))
 
 			if (quiz_mode != "RANDOM") {
-				quiz_count = quiz_cumul_sum[current_category_no] + current_no - 1;
+				quiz_count = quiz_cumul_sum[current_category_no] + current_no;
 			}
 
 			gen_quiz_content(quiz_category[current_category_no]);
