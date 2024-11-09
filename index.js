@@ -249,16 +249,12 @@ function reg_popstate_event() {
 			gen_top_content();
 			reg_start_event();
 		} else {
-			// if: browser back, else: forward
-			if (quiz_mode != "RANDOM") {
-				if (search_params.get("c") < current_category_no || search_params.get("n") < current_no) {
-					quiz_count--;
-				} else if (search_params.get("c") > current_category_no || search_params.get("n") > current_no) {
-					quiz_count++;
-				}
-			}
 			current_category_no = Number(search_params.get("c"));
 			current_no = Number(search_params.get("n"))
+
+			if (quiz_mode != "RANDOM") {
+				quiz_count = quiz_cumul_sum[current_category_no] + current_no - 1;
+			}
 
 			gen_quiz_content(quiz_category[current_category_no]);
 			reg_choice_event(quiz_category[current_category_no]);
