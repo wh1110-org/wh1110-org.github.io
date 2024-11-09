@@ -234,6 +234,7 @@ function reg_top_event() {
 	document.querySelector(".js-quiz-top").addEventListener("click", function () {
 		quiz_count = 0;
 		correct_count = 0;
+		history.pushState(null, null, "/");
 		gen_top_content();
 		reg_start_event();
 	}, false);
