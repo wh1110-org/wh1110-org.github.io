@@ -90,6 +90,7 @@ function gen_quiz_content(category) {
 		ins += '<h3 class="p-quiz-subtitle">' + correct_count + '\/' + quiz_count + '問正解 (' + Math.round(correct_count * 1000 / quiz_count) / 10 + '%)' + '・全' + quiz_cumul_sum[quiz_cumul_sum.length - 1] + '問</h3>';
 	}
 
+	scrollTo(0, 0);
 	document.querySelector(".js-quiz-content").innerHTML = ins;
 }
 
