@@ -26,7 +26,7 @@ async function main() {
 		quiz_mode = search_params.get("m");
 
 		if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展"];
+			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展", "西ヨーロッパの中世文化"];
 		} else {
 			quiz_category = [quiz_mode];
 		}
@@ -78,6 +78,7 @@ function gen_top_content() {
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="アフリカの歴史">・アフリカの歴史</button>';
 	ins += '	<u><p>- ヨーロッパ世界の形成発展</p></u>'
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="西ヨーロッパ世界の形成発展">・西ヨーロッパ世界の形成発展</button>';
+	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="西ヨーロッパの中世文化">・西ヨーロッパの中世文化</button>';
 	ins += '</div>';
 
 	document.querySelector('.js-quiz-content').innerHTML = ins;
@@ -170,7 +171,7 @@ function reg_start_event() {
 		document.querySelectorAll(".js-quiz-start")[i].addEventListener("click", function (e) {
 			quiz_mode = this.getAttribute("data-quiz_mode")
 			if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展"];
+				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展", "西ヨーロッパの中世文化"];
 				if (quiz_mode == "ALL") {
 					current_category_no = 0;
 					current_no = 0;
