@@ -26,7 +26,7 @@ async function main() {
 		quiz_mode = search_params.get("m");
 
 		if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史"];
+			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展"];
 		} else {
 			quiz_category = [quiz_mode];
 		}
@@ -52,7 +52,7 @@ async function main() {
 // Page Generations
 function gen_top_content() {
 	var ins = '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
-	ins += '<p>工事中。一問一答のため改変した所がある。権利は帰属しない。<br>感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
+	ins += '<p>工事中。一問一答のため改変した所がある。<br>感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
 	ins += '<div class="p-quiz-next">';
 	ins += '	<h4>全範囲</h4>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ALL">・はじめから</button>';
@@ -76,6 +76,8 @@ function gen_top_content() {
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="イスラーム世界の形成発展">・イスラーム世界の形成発展</button>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="イスラーム文化">・イスラーム文化</button>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="アフリカの歴史">・アフリカの歴史</button>';
+	ins += '	<u><p>- ヨーロッパ世界の形成発展</p></u>'
+	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="西ヨーロッパ世界の形成発展">・西ヨーロッパ世界の形成発展</button>';
 	ins += '</div>';
 
 	document.querySelector('.js-quiz-content').innerHTML = ins;
@@ -168,7 +170,7 @@ function reg_start_event() {
 		document.querySelectorAll(".js-quiz-start")[i].addEventListener("click", function (e) {
 			quiz_mode = this.getAttribute("data-quiz_mode")
 			if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史"];
+				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展"];
 				if (quiz_mode == "ALL") {
 					current_category_no = 0;
 					current_no = 0;
