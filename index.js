@@ -52,7 +52,7 @@ async function main() {
 // Page Generations
 function gen_top_content() {
 	var ins = '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
-	ins += '<p>工事中。1110題ですが、設問数はもう少しあります。感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
+	ins += '<p>工事中。一問一答のため改変した所がある。権利は帰属しない。<br>感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
 	ins += '<div class="p-quiz-next">';
 	ins += '	<h4>全範囲</h4>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ALL">・はじめから</button>';
