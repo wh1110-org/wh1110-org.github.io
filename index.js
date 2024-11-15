@@ -31,8 +31,7 @@ async function main() {
 			quiz_category = [quiz_mode];
 		}
 
-		get_quiz_data();
-		await new Promise(resolve => setTimeout(resolve, 500));
+		await get_quiz_data();
 
 		// 累積和
 		quiz_cumul_sum = [0];
@@ -155,13 +154,11 @@ function gen_answer_content(category, choice) {
 
 // Get Quiz Data
 async function get_quiz_data() {
-	let xhr = new XMLHttpRequest();
-	xhr.onload = function () {
-		quiz_data = xhr.response;
-	}
-	xhr.open("GET", "quiz.json");
-	xhr.responseType = "json";
-	xhr.send();
+	await fetch("quiz.json")
+		.then(response => response.json())
+		.then(data => {
+			quiz_data = data;
+		});
 }
 
 
