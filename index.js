@@ -33,17 +33,22 @@ async function main() {
 
 		await get_quiz_data();
 
-		// 累積和
-		quiz_cumul_sum = [0];
-		for (var i = 0; i < quiz_category.length; i++) {
-			quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
-		}
-		if (quiz_mode != "RANDOM") {
-			quiz_count = quiz_cumul_sum[current_category_no] + current_no;
-		}
+		try {
+			// 累積和
+			quiz_cumul_sum = [0];
+			for (var i = 0; i < quiz_category.length; i++) {
+				quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
+			}
+			if (quiz_mode != "RANDOM") {
+				quiz_count = quiz_cumul_sum[current_category_no] + current_no;
+			}
 
-		gen_quiz_content(quiz_category[current_category_no]);
-		reg_choice_event(quiz_category[current_category_no]);
+			gen_quiz_content(quiz_category[current_category_no]);
+			reg_choice_event(quiz_category[current_category_no]);
+		} catch (e) {
+			var ins = '<p>読み込みエラー。リンクが破損している可能性があります。</p>';
+			document.querySelector(".js-quiz-content").innerHTML = ins;
+		}
 	}
 	reg_popstate_event();
 }
