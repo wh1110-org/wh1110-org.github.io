@@ -1,5 +1,5 @@
 //
-// DIRTY CODE. REWRITING IS RECOMMENDED.
+// MESSY DIRTY UNREADABLE CODE. REWRITING IS RECOMMENDED.
 //
 let quiz_data = {};
 let quiz_category = [];
