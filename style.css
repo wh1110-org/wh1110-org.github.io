@@ -1,8 +1,6 @@
 body {
     width: 75vh;
     margin: auto;
-    /* margin-left: 25%; */
-    /* margin-right: 25%; */
     border-left: 0.1vh solid black;
     border-right: 0.1vh solid black;
     padding: 0.5%;
@@ -15,10 +13,6 @@ body {
         margin-right: 0%;
         padding: 0.5%;
     }
-}
-
-footer {
-    height: 30vh;
 }
 
 h1 {

@@ -104,6 +104,7 @@ function gen_top_content() {
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="産業革命">・産業革命</button>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="アメリカ独立革命">・アメリカ独立革命</button>';
 	ins += '</div>';
+	ins += '<div style="height: 30vh;">';
 
 	document.querySelector('.js-quiz-content').innerHTML = ins;
 }
