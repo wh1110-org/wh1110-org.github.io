@@ -17,6 +17,10 @@ body {
     }
 }
 
+footer {
+    height: 30vh;
+}
+
 h1 {
     color: #1B1B1B;
 }
