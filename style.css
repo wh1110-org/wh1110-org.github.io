@@ -1,13 +1,14 @@
 body {
-    width: auto;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 75vh;
+    margin: auto;
+    /* margin-left: 25%; */
+    /* margin-right: 25%; */
     border-left: 0.1vw solid black;
     border-right: 0.1vw solid black;
     padding: 0.5%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 75vh) {
     body {
         width: auto;
         margin-left: 0%;
