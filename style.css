@@ -9,6 +9,7 @@ body {
 
 @media screen and (max-width: 75vh) {
     body {
+        font-family: sans-serif;
         width: auto;
         margin-left: 0%;
         margin-right: 0%;
