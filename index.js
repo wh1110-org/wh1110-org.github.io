@@ -50,6 +50,8 @@ async function main() {
 			var ins = '<p>読み込みエラー。リンクが破損している可能性があります。</p>';
 			document.querySelector(".js-quiz-content").innerHTML = ins;
 		}
+		title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
+		document.title = title;
 	}
 	reg_popstate_event();
 }
@@ -217,6 +219,8 @@ function reg_start_event() {
 				quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
 			}
 
+			title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
+			document.title = title;
 			query = "?m=" + quiz_mode + "&c=" + current_category_no + "&n=" + current_no;
 			history.pushState(null, null, query);
 			gen_quiz_content(quiz_category[current_category_no]);
@@ -258,6 +262,9 @@ function reg_nextquiz_event(category) {
 				current_no++;
 			}
 		}
+
+		title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
+		document.title = title;
 
 		query = "?m=" + quiz_mode + "&c=" + current_category_no + "&n=" + current_no;
 		history.pushState(null, null, query);
