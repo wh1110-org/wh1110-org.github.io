@@ -292,6 +292,7 @@ function reg_popstate_event() {
 		if (search_params.get("m") == null) {
 			quiz_count = 0;
 			correct_count = 0;
+			document.title = "世界史1110";
 			gen_top_content();
 			reg_start_event();
 		} else {
@@ -301,6 +302,9 @@ function reg_popstate_event() {
 			if (quiz_mode != "RANDOM") {
 				quiz_count = quiz_cumul_sum[current_category_no] + current_no;
 			}
+
+			title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
+			document.title = title;
 
 			gen_quiz_content(quiz_category[current_category_no]);
 			reg_choice_event(quiz_category[current_category_no]);
