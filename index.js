@@ -27,7 +27,7 @@ async function main() {
 		quiz_mode = search_params.get("m");
 
 		if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展", "西ヨーロッパの中世文化", "東ヨーロッパ世界の形成発展", "明清代の中国", "トルコ・イラン世界の展開", "ムガル帝国の興隆", "ヨーロッパ世界の拡大", "ルネサンス", "宗教改革", "主権国家体制の形成", "重商主義と啓蒙専制主義", "イギリス革命", "ヨーロッパ諸国の海外進出", "17~18世紀のヨーロッパ文化", "産業革命", "アメリカ独立革命", "フランス革命とナポレオン", "ウィーン体制"];
+			quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展", "西ヨーロッパの中世文化", "東ヨーロッパ世界の形成発展", "明清代の中国", "トルコ・イラン世界の展開", "ムガル帝国の興隆", "ヨーロッパ世界の拡大", "ルネサンス", "宗教改革", "主権国家体制の形成", "重商主義と啓蒙専制主義", "イギリス革命", "ヨーロッパ諸国の海外進出", "17~18世紀のヨーロッパ文化", "産業革命", "アメリカ独立革命", "フランス革命とナポレオン", "ウィーン体制", "フランス政体の変遷"];
 		} else {
 			quiz_category = [quiz_mode];
 		}
@@ -60,7 +60,7 @@ async function main() {
 function gen_top_content() {
 	var ins = '<h3 class="p-quiz-subtitle">─センター過去問1110題とその解説</h3>';
 	ins += '<p>工事中。一問一答のため改変した所がある。<br>感想、訂正は<a href="mailto:contact@wh1110.org">contact@wh1110.org</a>まで。</p>';
-	ins += '<p>最終更新: 2024.12/03';
+	ins += '<p>最終更新: 2024.12/04';
 	ins += '<div class="p-quiz-next">';
 	ins += '	<h4>全範囲</h4>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ALL">・はじめから</button>';
@@ -108,6 +108,7 @@ function gen_top_content() {
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="フランス革命とナポレオン">・フランス革命とナポレオン</button>';
 	ins += '	<u><p>- 欧米における近代国民国家の発展</p></u>';
 	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="ウィーン体制">・ウィーン体制</button>';
+	ins += '	<button class="c-btn js-quiz-start" data-quiz_mode="フランス政体の変遷">・フランス政体の変遷</button>';
 	ins += '</div>';
 	ins += '<div style="height: 30vh;">';
 
@@ -199,7 +200,7 @@ function reg_start_event() {
 		document.querySelectorAll(".js-quiz-start")[i].addEventListener("click", function (e) {
 			quiz_mode = this.getAttribute("data-quiz_mode")
 			if (quiz_mode == "ALL" || quiz_mode == "RANDOM") {
-				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展", "西ヨーロッパの中世文化", "東ヨーロッパ世界の形成発展", "明清代の中国", "トルコ・イラン世界の展開", "ムガル帝国の興隆", "ヨーロッパ世界の拡大", "ルネサンス", "宗教改革", "主権国家体制の形成", "重商主義と啓蒙専制主義", "イギリス革命", "ヨーロッパ諸国の海外進出", "17~18世紀のヨーロッパ文化", "産業革命", "アメリカ独立革命", "フランス革命とナポレオン", "ウィーン体制"];
+				quiz_category = ["古代オリエント世界", "ギリシア世界", "ローマ世界", "インドの古典文明", "東南アジアの諸文明", "中国の古典文明", "南北アメリカ文明", "魏晋南北朝から元", "中国総合問題", "東アジア諸国", "内陸アジア世界", "イスラーム世界の形成発展", "イスラーム文化", "アフリカの歴史", "西ヨーロッパ世界の形成発展", "西ヨーロッパの中世文化", "東ヨーロッパ世界の形成発展", "明清代の中国", "トルコ・イラン世界の展開", "ムガル帝国の興隆", "ヨーロッパ世界の拡大", "ルネサンス", "宗教改革", "主権国家体制の形成", "重商主義と啓蒙専制主義", "イギリス革命", "ヨーロッパ諸国の海外進出", "17~18世紀のヨーロッパ文化", "産業革命", "アメリカ独立革命", "フランス革命とナポレオン", "ウィーン体制", "フランス政体の変遷"];
 				if (quiz_mode == "ALL") {
 					current_category_no = 0;
 					current_no = 0;
@@ -218,11 +219,11 @@ function reg_start_event() {
 			for (var i = 0; i < quiz_category.length; i++) {
 				quiz_cumul_sum.push(quiz_cumul_sum[i] + quiz_data[quiz_category[i]].length);
 			}
+			query = "?m=" + quiz_mode + "&c=" + current_category_no + "&n=" + current_no;
+			history.pushState(null, null, query);
 
 			title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
 			document.title = title;
-			query = "?m=" + quiz_mode + "&c=" + current_category_no + "&n=" + current_no;
-			history.pushState(null, null, query);
 			gen_quiz_content(quiz_category[current_category_no]);
 			reg_choice_event(quiz_category[current_category_no]);
 		}, false);
@@ -263,11 +264,11 @@ function reg_nextquiz_event(category) {
 			}
 		}
 
-		title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
-		document.title = title;
-
 		query = "?m=" + quiz_mode + "&c=" + current_category_no + "&n=" + current_no;
 		history.pushState(null, null, query);
+
+		title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
+		document.title = title;
 
 		gen_quiz_content(quiz_category[current_category_no]);
 		reg_choice_event(quiz_category[current_category_no]);
@@ -292,9 +293,9 @@ function reg_popstate_event() {
 		if (search_params.get("m") == null) {
 			quiz_count = 0;
 			correct_count = 0;
-			document.title = "世界史1110";
 			gen_top_content();
 			reg_start_event();
+			document.title = "世界史1110";
 		} else {
 			current_category_no = Number(search_params.get("c"));
 			current_no = Number(search_params.get("n"))
@@ -303,11 +304,11 @@ function reg_popstate_event() {
 				quiz_count = quiz_cumul_sum[current_category_no] + current_no;
 			}
 
-			title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
-			document.title = title;
-
 			gen_quiz_content(quiz_category[current_category_no]);
 			reg_choice_event(quiz_category[current_category_no]);
+
+			title = quiz_category[current_category_no] + " 第" + (current_no + 1) + "問 | 世界史1110";
+			document.title = title;
 		}
 	}, false);
 }
