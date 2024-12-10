@@ -5,6 +5,11 @@ body {
     border-left: 0.1vh solid black;
     border-right: 0.1vh solid black;
     padding: 0.5%;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 @media screen and (max-width: 75vh) {
