@@ -35,7 +35,7 @@ h1 {
     color: #1B1B1B;
     background: white;
     border: 1px solid white;
-    margin-bottom: 1%;
+    padding: 1%;
 }
 
 .c-btn:hover {
@@ -52,7 +52,7 @@ h1 {
     color: #1B1B1B;
     background: #baeefc;
     border: 1px solid white;
-    margin-bottom: 1%;
+    padding: 1%;
 }
 
 .c-btn-incorrect {
@@ -63,7 +63,7 @@ h1 {
     color: #1B1B1B;
     background: #fcbaba;
     border: 1px solid white;
-    margin-bottom: 1%;
+    padding: 1%;
 }
 
 
