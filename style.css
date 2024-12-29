@@ -111,3 +111,7 @@ img {
 table {
     width: 100%;
 }
+
+iframe {
+    aspect-ratio: 1 / 1;
+}
